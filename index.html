@@ -3,67 +3,160 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LuckySpin</title>
+    <meta name="theme-color" content="#090c18" />
+    <title>LuckySpin — صالة ألعاب تجريبية</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="page-shell">
-      <div class="stars stars-one"></div>
-      <div class="stars stars-two"></div>
+    <div class="site-shell">
+      <div class="ambient ambient-one"></div>
+      <div class="ambient ambient-two"></div>
 
       <header class="topbar">
-        <div class="brand-wrap">
-          <div class="brand-badge">LS</div>
-          <div>
-            <p class="brand-kicker">مبارة اليوم</p>
-            <h1>LuckySpin</h1>
-          </div>
-        </div>
+        <a class="brand" href="#top" aria-label="LuckySpin الرئيسية">
+          <span class="brand-mark"><span>✦</span></span>
+          <span class="brand-copy"><strong>Lucky<span>Spin</span></strong><small>PLAY FOR FUN</small></span>
+        </a>
 
-        <div class="coin-panel">
-          <span class="coin-icon">◉</span>
-          <span id="coinCount">1200</span>
+        <nav class="main-nav" aria-label="التنقل الرئيسي">
+          <a class="active" href="#games">الألعاب</a>
+          <a href="#live">المباشر <i class="live-dot"></i></a>
+          <a href="#rewards">المكافآت</a>
+        </nav>
+
+        <div class="account-actions">
+          <span class="demo-badge">تجريبي 100%</span>
+          <button class="profile-btn" aria-label="الملف الشخصي">♙</button>
         </div>
       </header>
 
-      <main class="game-layout">
-        <section class="wheel-stage">
-          <div class="wheel-glow"></div>
-          <div class="pointer" aria-hidden="true"></div>
-          <div id="wheel" class="wheel" aria-label="عجلة الحظ"></div>
-          <div id="wheelLabels" class="wheel-labels"></div>
-          <div class="wheel-center">
-            <span>SPIN</span>
+      <main id="top">
+        <section class="hero" id="games">
+          <div class="hero-copy">
+            <span class="eyebrow"><i></i> أكبر تجربة ألعاب مجانية</span>
+            <h1>العب بذكاء.<br /><em>اربح المتعة.</em></h1>
+            <p>استمتع بأجواء الكازينو العالمية مع عملات افتراضية فقط، وبدون أي أموال حقيقية.</p>
+            <div class="hero-meta">
+              <span>✦ لا تسجيل مطلوب</span>
+              <span>◈ آمن ومجاني</span>
+            </div>
+          </div>
+
+          <div class="hero-orbit" aria-hidden="true">
+            <span class="orbit-card card-a">♠</span>
+            <span class="orbit-card card-b">♛</span>
+            <span class="orbit-card card-c">♦</span>
+            <div class="hero-chip">LS</div>
           </div>
         </section>
 
-        <aside class="side-panel">
-          <div class="panel-header">
-            <span class="tiny-tag">النتيجة</span>
-            <h2 id="statusText">جاهز للدوران</h2>
+        <section class="dashboard-grid" id="live">
+          <div class="game-card spotlight-card">
+            <div class="card-top">
+              <div>
+                <span class="section-kicker">لعبة اليوم <b>● مباشر</b></span>
+                <h2>عجلة الحظ الملكية</h2>
+              </div>
+              <span class="players">♙ 1,248 يلعبون الآن</span>
+            </div>
+
+            <div class="wheel-area">
+              <div class="wheel-glow"></div>
+              <div class="pointer" aria-hidden="true"></div>
+              <div id="wheel" class="wheel" aria-label="عجلة الحظ"></div>
+              <div id="wheelLabels" class="wheel-labels"></div>
+              <div class="wheel-center">
+                <span>SPIN</span>
+                <small>50 نقطة</small>
+              </div>
+            </div>
+
+            <div class="game-foot">
+              <div>
+                <span class="muted-label">رصيدك الافتراضي</span>
+                <strong><span class="coin-icon">◉</span> <span id="coinCount">1,200</span></strong>
+              </div>
+              <button id="spinBtn" class="spin-btn">أدر العجلة <span>←</span></button>
+            </div>
           </div>
 
-          <div class="result-box">
-            <span class="label">الجائزة</span>
-            <strong id="prizeText">--</strong>
+          <aside class="side-column">
+            <div class="game-card result-card">
+              <div class="card-heading">
+                <span class="section-kicker">آخر نتيجة</span>
+                <span class="result-icon">✦</span>
+              </div>
+              <h3 id="statusText">جاهز للدوران</h3>
+              <div class="result-box">
+                <span>الجائزة المكتسبة</span>
+                <strong id="prizeText">--</strong>
+              </div>
+              <div class="result-line">
+                <span>فرصتك القادمة</span>
+                <b>متاحة الآن</b>
+              </div>
+            </div>
+
+            <div class="game-card mini-card" id="rewards">
+              <div class="section-kicker">مهمتك اليومية <span class="progress-label">2 / 3</span></div>
+              <h3>دُر العجلة 3 مرات</h3>
+              <div class="progress"><span></span></div>
+              <small>+150 نقطة افتراضية عند الإكمال</small>
+            </div>
+          </aside>
+        </section>
+
+        <section class="lower-section">
+          <div class="section-title">
+            <div>
+              <span class="section-kicker">اكتشف المزيد</span>
+              <h2>ألعاب شهيرة</h2>
+            </div>
+            <a href="#games">عرض الكل ←</a>
           </div>
 
-          <button id="spinBtn" class="spin-btn">ابدأ العجلة</button>
+          <div class="game-list">
+            <article class="game-tile tile-purple">
+              <span class="tile-symbol">♛</span>
+              <div>
+                <h3>بوكر النخبة</h3>
+                <small>قريباً · تحدٍ فردي</small>
+              </div>
+              <span class="lock">⌁</span>
+            </article>
 
-          <div class="legend">
-            <div><span class="dot dot-one"></span> جوائز صغيرة</div>
-            <div><span class="dot dot-two"></span> مكافآت متوسطة</div>
-            <div><span class="dot dot-three"></span> جائزة خاصة</div>
+            <article class="game-tile tile-blue">
+              <span class="tile-symbol">♠</span>
+              <div>
+                <h3>بلاك جاك 21</h3>
+                <small>قريباً · ضد الكمبيوتر</small>
+              </div>
+              <span class="lock">⌁</span>
+            </article>
+
+            <article class="game-tile tile-gold">
+              <span class="tile-symbol">♦</span>
+              <div>
+                <h3>صندوق الجوائز</h3>
+                <small>قريباً · جوائز يومية</small>
+              </div>
+              <span class="lock">⌁</span>
+            </article>
           </div>
-        </aside>
+        </section>
       </main>
+
+      <footer>
+        <span>© 2024 LuckySpin</span>
+        <span>هذه منصة ترفيهية تجريبية • لا أموال حقيقية • للمتعة فقط</span>
+        <span>اللعب المسؤول أولاً</span>
+      </footer>
     </div>
 
-    <canvas id="confettiCanvas"></canvas>
-
+    <canvas id="confettiCanvas" aria-hidden="true"></canvas>
     <script src="script.js"></script>
   </body>
 </html>
